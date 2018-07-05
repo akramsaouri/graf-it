@@ -1,0 +1,39 @@
+{
+  "name": "graf-it",
+  "description": "Generate a mock GraphQL API without writing a single line of code.",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4",
+    "express-graphql": "^0.6.11",
+    "graphql": "^0.11.3",
+    "graphql-tools": "^2.9.0",
+    "lodash": "^4.17.4",
+    "lowdb": "^1.0.0",
+    "pluralize": "^7.0.0",
+    "yargs": "^10.0.3"
+  },
+  "scripts": {
+    "build": "babel . -d dist --ignore node_modules",
+    "start": "nodemon . --exec babel-node",
+    "test": "mocha --compilers js:babel-core/register lib --bail"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "chai": "^4.1.2",
+    "chai-string": "^1.4.0",
+    "mocha": "^3.5.3",
+    "nodemon": "^1.12.1"
+  },
+  "bin": {
+    "graf-it": "dist/index.js"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "db.test.json"
+    ]
+  }
+}
