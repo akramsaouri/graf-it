@@ -1,4 +1,4 @@
-# graph-it
+# graf-it
 
 ## Install 
 `npm install -g graf-it`
