@@ -14,9 +14,9 @@
     "yargs": "^15.1.0"
   },
   "scripts": {
-    "build": "babel . -d dist --ignore node_modules",
-    "start": "nodemon . --exec babel-node",
-    "test": "mocha --require babel-core/register lib --bail"
+    "build": "babel src -d dist --ignore node_modules",
+    "start": "nodemon src --exec babel-node",
+    "test": "mocha --require babel-core/register src/lib --bail"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
