@@ -1,10 +1,11 @@
 {
   "name": "graf-it",
   "description": "Generate a mock GraphQL API without writing a single line of code.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
     "graphql": "^14.5.8",

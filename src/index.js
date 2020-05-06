@@ -5,6 +5,7 @@ import SchemaMaker from './lib/schema-maker'
 import { makeExecutableSchema } from 'graphql-tools'
 import express from 'express'
 import graphqlHTTP from 'express-graphql'
+import cors from 'cors'
 
 // read cli args
 const { argv } = yargs
@@ -25,10 +26,14 @@ const schema = makeExecutableSchema({ typeDefs, resolvers })
 // start graphql http server
 const app = express()
 
-app.use('/graphql', graphqlHTTP({
-  schema,
-  graphiql: true
-}))
+app.use(cors())
+app.use(
+  '/graphql',
+  graphqlHTTP({
+    schema,
+    graphiql: true,
+  })
+)
 
 app.listen(port, () => {
   console.log(`GraphQL server started at http://localhost:${port}/graphql`)
